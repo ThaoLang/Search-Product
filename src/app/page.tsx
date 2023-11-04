@@ -24,7 +24,7 @@ export default function Home() {
       setIsLoading(true); 
       const res = await axios.get(`${BASE_URL}${searchText}&client_id=${API_KEY}&per_page=10`);
       const productResult = await res.data.results;
-      setItemList(productResult?.map((item: productItemProp) => ({ url: item.urls.small, description: item.description })))
+      setItemList(productResult?.map((item: any) => ({ url: item.urls.small, description: item.description })))
     } catch (error) {
       console.error("Error loading data:", error);
     }
@@ -64,7 +64,7 @@ export default function Home() {
       try {        
         const res = await axios.get(`${BASE_URL}${searchText}&client_id=${API_KEY}&per_page=10&page=${page + 1}`);
         const newImages = res.data.results;
-        setItemList((prevItems) => [...prevItems, ...newImages.map((item: productItemProp) => ({ url: item.urls.small, description: item.description }))]);
+        setItemList((prevItems) => [...prevItems, ...newImages.map((item: any) => ({ url: item.urls.small, description: item.description }))]);
         setPage((prevPage) => prevPage + 1);
       } catch (error) {
         console.error("Error loading more data:", error);
