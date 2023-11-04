@@ -11,8 +11,8 @@ export default function ProductList(props:ProductListProps) {
   
 
   return (
-    <div className='grid grid-cols-3 gap-4 px-4'>
-        {props.products?.map(product =><ProductItem url={product.url} description={product.description}/>)}
+    <div key={'product-list'} className='grid grid-cols-3 gap-4 px-4'>
+        {props.products?.map((product,idx) =><ProductItem key={'product-item-s'+idx} id={product.id} url={product.url} description={product.description}/>)}
     </div>
   )
 }

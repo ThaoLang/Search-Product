@@ -79,7 +79,7 @@ export default function Home() {
   return (
     <div className="relative">
     <div className="sticky top-0 bg-white z-10">
-      <SearchBar text={searchText} onChangeText={setSearchText} onClick={loadImage} />
+      <SearchBar key={'product-search'} text={searchText} onChangeText={setSearchText} onClick={loadImage} />
     </div>
     <div className="mt-2 ">
       <div className="relative flex-col">
