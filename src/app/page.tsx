@@ -7,7 +7,6 @@ import ProductList from '@/component/ProductList'
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import { productItemProp } from '@/component/ProductItem'
-import env from "react-dotenv";
 
 export default function Home() {
   const API_KEY='hmbMi7acz1ugLaMEVFPJgsbKphCGcRR8E0u8hprINL8'
