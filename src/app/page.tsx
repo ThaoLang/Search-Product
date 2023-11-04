@@ -18,11 +18,12 @@ export default function Home() {
   const loadingNotification ="Loading...";
   const [page, setPage] = useState(1);
 
-  async function loadImage() {
+  async function loadImage(text:string) {
     setItemList([]);
+    setSearchText(text);
     try {
       setIsLoading(true); 
-      const res = await axios.get(`${BASE_URL}${searchText}&client_id=${API_KEY}&per_page=10`);
+      const res = await axios.get(`${BASE_URL}${text}&client_id=${API_KEY}&per_page=10`);
       const productResult = await res.data.results;
       setItemList(productResult?.map((item: any) => ({ url: item.urls.small, description: item.description })))
     } catch (error) {
@@ -38,8 +39,8 @@ export default function Home() {
   
   
   useEffect(() =>{
-    loadImage();
-    setSearchText("");
+    loadImage(searchText);
+    // setSearchText("");
   },[])
 
   useEffect(() => {
