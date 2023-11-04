@@ -2,14 +2,12 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://thaolang.github.io/Search-Product/",
   "scripts": {
     "dev": "  next dev",
     "build": "  next build",
     "start": "  next start",
-    "lint": "next lint",
-    "predeploy":"next build",
-    "deploy": "gh-pages -d build"
+    "lint": "next lint"
+
   },
  
   "dependencies": {
